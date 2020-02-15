@@ -110,6 +110,58 @@ Start the Filebeat using command `./filebeat -c filebeat.yml -e`
 
 ## 4. Install Suricata IDS
 
+Since this is ARM machine, no Suricata repository can be add.
+
+Proceed with basic `apt install`
+
+`apt install suricata suricata-update`
+
+Clone this git `git clone https://github.com/401trg/utilities/blob/master/suricata_et_rule_update.py`
+
+And run `python3 suricata_et_rule_update.py`
+
+This will download rules and configuration files from Emerging Threat's open ruleset and move them to /etc/suricata/. It also enabled informational rules in EmergingThreat's included configuration file
+
+Then update the rules, run `suricata-update`
+
+View available sources `suricata-update list-sources`. The results is somewhat as below;
+
+```
+15/2/2020 -- 07:15:16 - <Info> -- Using data-directory /var/lib/suricata.
+15/2/2020 -- 07:15:16 - <Info> -- Using Suricata configuration /etc/suricata/suricata.yaml
+15/2/2020 -- 07:15:16 - <Info> -- Using /etc/suricata/rules for Suricata provided rules.
+15/2/2020 -- 07:15:16 - <Info> -- Found Suricata version 4.1.2 at /usr/bin/suricata.
+Name: et/open
+  Vendor: Proofpoint
+  Summary: Emerging Threats Open Ruleset
+  License: MIT
+Name: et/pro
+  Vendor: Proofpoint
+  Summary: Emerging Threats Pro Ruleset
+  License: Commercial
+  Replaces: et/open
+  Parameters: secret-code
+  Subscription: https://www.proofpoint.com/us/threat-insight/et-pro-ruleset
+Name: oisf/trafficid
+  Vendor: OISF
+  Summary: Suricata Traffic ID ruleset
+  License: MIT
+```
+
+Proceed to enable anything you want, for example `suricata-update enable-source oisf/trafficid`
+
+Redo untill satisfy.
+
+Lastly, to rerun `suricata-update` to verify changes.
+
+Restart the Suricata.
+
+ITS DONE!
+
+## To create Telegram alert on new log appeared at /var/log/suricata/fast.log
+
+
+
 
 
 
