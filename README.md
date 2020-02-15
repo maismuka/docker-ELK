@@ -158,7 +158,7 @@ Restart the Suricata.
 
 ITS DONE!
 
-## To create Telegram alert on new log appeared at /var/log/suricata/fast.log
+## 5. To create Telegram alert on new log appeared at /var/log/suricata/fast.log
 
 
 
