@@ -146,6 +146,9 @@ Name: oisf/trafficid
   Vendor: OISF
   Summary: Suricata Traffic ID ruleset
   License: MIT
+  .
+  .
+  .
 ```
 
 Proceed to enable anything you want, for example `suricata-update enable-source oisf/trafficid`
@@ -155,6 +158,9 @@ Redo untill satisfy.
 Lastly, to rerun `suricata-update` to verify changes.
 
 Restart the Suricata.
+
+`cd /etc/suricata`
+`suricata -i eth0`
 
 ITS DONE!
 
