@@ -116,7 +116,7 @@ Proceed with basic `apt install`
 
 `apt install suricata suricata-update`
 
-Clone this git `git clone https://github.com/401trg/utilities/blob/master/suricata_et_rule_update.py`
+Clone this git `git clone https://github.com/401trg/utilities.git`
 
 And run `python3 suricata_et_rule_update.py`
 
